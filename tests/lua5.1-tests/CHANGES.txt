@@ -1,0 +1,14 @@
+Source: https://github.com/yuin/gopher-lua/tree/master/_lua5.1-tests
+(the official Lua 5.1 test scripts).  Local changes:
+
+- pm.lua: syntax fix ("do;" statement).
+- allwin.lua: copy of all.lua for Windows; skips main.lua (needs a POSIX
+  shell and the stand-alone interpreter); runs big.lua only when the
+  environment variable RUNBIG is set (used for Win32).
+- allposix.lua: copy of all.lua for Linux and macOS; runs main.lua, and big.lua only
+  when RUNBIG is set (on 64-bit systems it allocates until memory runs
+  out, with the C build too).
+- math.lua: four tonumber(s, base) asserts commented out (lines 47-52).
+  They also fail with the C Lua on Windows and on 64-bit Linux: strtoul
+  makes negative values wrap (and on Windows, where it is 32-bit, values
+  above 2^32 overflow).

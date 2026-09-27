@@ -1,0 +1,25 @@
+-v
+-e "print(1+1)"
+-e "print(1+1)" -v
+-e "x=" 
+-e"print('attached')"
+-l mod1 -e "print('after')"
+-lmod1
+script.lua a b c
+-- script.lua a
+err.lua
+nosuch.lua
+-z
+-e
+-l
+-i -e "print(5)" <<< 'print(6)'
+- x y <<< 'print("stdin", ...)'
+<<< 'print("piped stdin")'
+-i <<< $'x = 1\nprint(x)\n= x + 1\nfor i=1,2 do\nprint(i)\nend\nerror("iex")\nprint(\n'
+-e "os.exit(7)"
+-e "io.write('no newline')"
+-e "error({})"
+-e "error(nil)"
+-e "print(select('#', ...))" a b
+"script.lua" "arg with spaces" "q\"uote" back\\slash
+-e "print(debug.traceback())"
