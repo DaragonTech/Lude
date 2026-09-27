@@ -1,4 +1,4 @@
-![Lude-Icon](./Lude-icon.png)
+![Lude-Icon](./lude-icon.png)
 
 # Lude
 
